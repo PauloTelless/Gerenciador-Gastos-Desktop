@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_LastSelectedProfileId>C:\Respositório C#\GerenciadorGastos\GerenciadorGastos\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="Forms\CustoFixo\AdicionarCusto\AdicionarCusto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\CustoFixo\AlterarCusto\EditarCusto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\CustoFixo\RemoverCusto\RemoverCusto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Divida\AdicionarDivida\AdicionarDivida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Divida\EditarDivida\EditarDivida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Divida\RemoverDivida\RemoverDivida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Index\Index.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\ItemForms\AdicionarItem\AdicionarItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\ItemForms\EditarItem\EditarItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\ItemForms\RemoverItem\RemoverItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Terceiros\AdicionarTerceiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Terceiros\Terceiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
