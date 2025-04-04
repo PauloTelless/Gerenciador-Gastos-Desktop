@@ -117,38 +117,45 @@ WHERE CAST(ite.data_cadastro AS DATE) = @data;
             }
         }
 
-        public decimal ObterSomaValorItemPorMes(int mes, int ano)
+        public decimal ObterSomaValorItemPorMes(DateTime data)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["SqlServerConnection"].ToString();
             decimal totalValor = 0;
 
+            DateTime dataInicio;
+            DateTime dataFim;
+
+            if (data.Day >= 8)
+            {
+                dataInicio = new DateTime(data.Year, data.Month, 8);
+                dataFim = dataInicio.AddMonths(1).AddDays(-1); 
+            }
+            else
+            {
+                dataInicio = new DateTime(data.Year, data.Month, 1).AddMonths(-1).AddDays(6); 
+                dataFim = data;
+            }
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT SUM(valor_item) AS TotalValor " +
-               "FROM Item " +
-               "WHERE MONTH(data_cadastro) = @Mes " +
-               "AND YEAR(data_cadastro) = @Ano " +
-               "AND pessoa_id = 1";
-
+                string query = @"SELECT SUM(valor_item) AS TotalValor 
+                               FROM Item 
+                               WHERE data_cadastro >= @DataInicio 
+                               AND data_cadastro <= @DataFim 
+                               AND pessoa_id = 1";
 
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@Mes", mes);
-                command.Parameters.AddWithValue("@Ano", ano);
+                command.Parameters.AddWithValue("@DataInicio", dataInicio);
+                command.Parameters.AddWithValue("@DataFim", dataFim);
 
                 try
                 {
                     connection.Open();
-
                     var result = command.ExecuteScalar();
 
-                    if (result == DBNull.Value || result == null)
-                    {
-                        totalValor = 0;
-                    }
-                    else
-                    {
-                        totalValor = Convert.ToDecimal(result);
-                    }
+                    totalValor = result == DBNull.Value || result == null
+                        ? 0
+                        : Convert.ToDecimal(result);
                 }
                 catch (Exception ex)
                 {

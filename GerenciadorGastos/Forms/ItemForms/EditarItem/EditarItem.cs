@@ -151,10 +151,7 @@ namespace GerenciadorGastos.Forms.ItemForms
             var dataAtual = DateTime.Now.ToShortDateString();
             label12.Text = dataAtual;
 
-            var mes = DateTime.Now.Month;
-            var ano = DateTime.Now.Year;
-
-            decimal faturaAtual = itemBLL.ObterGastoPorMes(mes, ano);
+            decimal faturaAtual = itemBLL.ObterGastoPorMes(DateTime.Now);
             decimal faturaAtualTotal = faturaAtual + total;
             decimal faturaLimite = faturaBLL.ObterValorAtualFatura();
 
@@ -171,10 +168,7 @@ namespace GerenciadorGastos.Forms.ItemForms
             faturaBLL.AtualizarValorFaturaAtual(valor);
             label11.Text = valor.ToString();
 
-            int mes = DateTime.Now.Month;
-            int ano = DateTime.Now.Year;
-
-            decimal gastoMes = itemBLL.ObterGastoPorMes(mes, ano);
+            decimal gastoMes = itemBLL.ObterGastoPorMes(DateTime.Now);
             decimal gastoFixo = gastoFixoBLL.ObterValorGastosFixo();
             decimal divida = dividaBLL.ObterValorDividas();
 

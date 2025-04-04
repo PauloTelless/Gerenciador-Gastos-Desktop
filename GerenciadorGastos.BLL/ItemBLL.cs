@@ -51,11 +51,11 @@ namespace GerenciadorGastos.BLL
             }
         }
 
-        public decimal ObterGastoPorMes(int mes, int ano)
+        public decimal ObterGastoPorMes(DateTime data)
         {
             try
             {
-                var result = itemDAL.ObterSomaValorItemPorMes(mes, ano);
+                var result = itemDAL.ObterSomaValorItemPorMes(data);
 
                 return (decimal)result;
             }

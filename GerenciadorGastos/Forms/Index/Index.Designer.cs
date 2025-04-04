@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem1 = new ListViewItem("");
+            ListViewItem listViewItem2 = new ListViewItem("");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Index));
             panel1 = new Panel();
             label10 = new Label();
@@ -92,7 +92,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(128, 100);
+            label9.Location = new Point(119, 100);
             label9.Name = "label9";
             label9.Size = new Size(50, 20);
             label9.TabIndex = 22;
@@ -110,7 +110,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(149, 70);
+            label8.Location = new Point(144, 70);
             label8.Name = "label8";
             label8.Size = new Size(50, 20);
             label8.TabIndex = 22;
@@ -154,7 +154,7 @@
             // listView1
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { nomeProdutoColuna, valorColuna, nomePessoaColuna });
-            listView1.Items.AddRange(new ListViewItem[] { listViewItem1 });
+            listView1.Items.AddRange(new ListViewItem[] { listViewItem2 });
             listView1.Location = new Point(20, 54);
             listView1.Name = "listView1";
             listView1.Size = new Size(439, 693);

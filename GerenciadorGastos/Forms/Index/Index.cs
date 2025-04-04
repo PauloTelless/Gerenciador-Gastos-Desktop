@@ -155,7 +155,7 @@ namespace GerenciadorGastos.Forms
 
         private void SetarDadosDisplayMenu(DateTime data)
         {
-            decimal valorGastoNoMes = itemBLL.ObterGastoPorMes(data.Month, data.Year);
+            decimal valorGastoNoMes = itemBLL.ObterGastoPorMes(data);
 
             decimal faturaLimite = faturaBLL.ObterValorAtualFatura();
             decimal gastoFixo = gastoFixoBLL.ObterValorGastosFixo();
@@ -165,7 +165,8 @@ namespace GerenciadorGastos.Forms
 
             decimal valorRestanteMes = faturaLimite - valorTotalMes;
 
-            int numeroDeSemanas = CalcularNumeroDeSemanas(data);
+            var dataAtual = DateTime.Now;
+            int numeroDeSemanas = CalcularNumeroDeSemanas(dataAtual);
 
             var disponivelPorSemana = valorRestanteMes / numeroDeSemanas;
 
@@ -175,37 +176,31 @@ namespace GerenciadorGastos.Forms
 
         }
 
-        private int CalcularNumeroDeSemanas(DateTime dataFatura)
+        private int CalcularNumeroDeSemanas(DateTime dataAtual)
         {
+            DateTime dia8 = new DateTime(dataAtual.Year, dataAtual.Month, 8);
+
+            if (dataAtual.Day >= 8)
+            {
+                dia8 = dia8.AddMonths(1);
+            }
+
+            DateTime ultimoDomingo = dataAtual;
+            while (ultimoDomingo.DayOfWeek != DayOfWeek.Sunday)
+            {
+                ultimoDomingo = ultimoDomingo.AddDays(-1);
+            }
+
             int semanas = 0;
+            DateTime proximoDomingo = ultimoDomingo.AddDays(7);
 
-            DateTime proximoDia8 = new DateTime(dataFatura.Year, dataFatura.Month, 8).AddMonths(1);
-
-            DateTime dataAtual = DateTime.Now;
-
-            if (dataFatura != dataAtual)
-            {
-                dataAtual = dataFatura; 
-            }
-
-            if (dataAtual > proximoDia8)
-            {
-                return 0;
-            }
-
-            DateTime dataInicioRestante = dataAtual;
-            if (dataInicioRestante.DayOfWeek != DayOfWeek.Monday)
-            {
-                dataInicioRestante = dataInicioRestante.AddDays(-(int)dataInicioRestante.DayOfWeek + (int)DayOfWeek.Monday);
-            }
-
-            while (dataInicioRestante < proximoDia8)
+            while (proximoDomingo < dia8)
             {
                 semanas++;
-                dataInicioRestante = dataInicioRestante.AddDays(7);
+                proximoDomingo = proximoDomingo.AddDays(7);
             }
 
-            return semanas;
+            return Math.Max(semanas, 1);
         }
 
         #endregion
