@@ -22,6 +22,34 @@ namespace GerenciadorGastos.BLL
             }
         }
 
+        public List<Item> ObterItems(bool pago = false)
+        {
+            try
+            {
+                var result = itemDAL.ObterItens(pago);
+
+                return result;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public void PagarItem(int item_id, bool reativarPagamento = false)
+        {
+            try
+            {
+                itemDAL.PagarItem(item_id, reativarPagamento);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception($"Ocorreu um erro ao pagar item: {ex.Message}");
+            }
+        }
+
         public void AdicionarItem(Item item)
         {
             try
@@ -72,10 +100,24 @@ namespace GerenciadorGastos.BLL
             {
                 itemDAL.DeletarItem(item_id);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw new Exception($"Ocorreu um erro ao deletar o item: {ex.Message}");
+            }
+        }
+
+        public void PagarTodosItens()
+        {
+            try
+            {
+                itemDAL.PagarTodosItens();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception($"Ocorreu um erro ao pagar todos os itens: {ex.Message}");
             }
         }
     }

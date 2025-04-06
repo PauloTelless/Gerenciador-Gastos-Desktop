@@ -22,7 +22,7 @@ namespace GerenciadorGastos.Forms.Divida.RemoverDivida
         {
             InitializeComponent();
             PopulaComboBox();
-            this.editarItemForm = editarItemForm;   
+            this.editarItemForm = editarItemForm;
         }
 
         #region Botões

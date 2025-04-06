@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GerenciadorGastos.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9aa107de0152d169a0f29100045929496305ecdb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b56f7d2f21ba8a819b0235cb6e63150a7a5aac0b")]
 [assembly: System.Reflection.AssemblyProductAttribute("GerenciadorGastos.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GerenciadorGastos.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

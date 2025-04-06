@@ -1,5 +1,6 @@
 ﻿using GerenciadorGastos.BLL;
 using GerenciadorGastos.Forms.ItemForms;
+using GerenciadorGastos.Forms.ItemForms.PagarItem;
 using GerenciadorGastos.Forms.Terceiros;
 
 namespace GerenciadorGastos.Forms
@@ -40,7 +41,7 @@ namespace GerenciadorGastos.Forms
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Terceiro formTerceiro = new Terceiro();
+            Terceiro formTerceiro = new Terceiro(this);
             formTerceiro.ShowDialog();
         }
 
@@ -59,11 +60,18 @@ namespace GerenciadorGastos.Forms
             SetarDadosDisplayMenu(data);
         }
 
-        private void button6_Click(object sender, EventArgs e)
+
+        private void button8_Click(object sender, EventArgs e)
         {
-            AdicionarTerceiro adicionarTercieroForm = new AdicionarTerceiro();
-            adicionarTercieroForm.ShowDialog();
+
         }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            PagarItem pagarItemForm = new PagarItem(this);
+            pagarItemForm.ShowDialog();
+        }
+
         #endregion
 
         #region Funções
@@ -83,9 +91,12 @@ namespace GerenciadorGastos.Forms
                 {
                     foreach (var item in itemsList)
                     {
+                        var pago = Convert.ToBoolean(item.Pago) ? "Sim" : "Não";
+
                         ListViewItem listViewItem = new ListViewItem(item.NomeItem);
                         listViewItem.SubItems.Add(item.ValorItem.ToString("C2"));
                         listViewItem.SubItems.Add(item.PessoaNome.ToString());
+                        listViewItem.SubItems.Add(pago);
                         listView1.Items.Add(listViewItem);
                     }
 
@@ -122,9 +133,13 @@ namespace GerenciadorGastos.Forms
                 {
                     foreach (var item in itemsList)
                     {
+                        var pago = item.Pago == false ? "Não" : "Sim";
+
+
                         ListViewItem listViewItem = new ListViewItem(item.NomeItem);
                         listViewItem.SubItems.Add(item.ValorItem.ToString("C2"));
                         listViewItem.SubItems.Add(item.PessoaNome.ToString());
+                        listViewItem.SubItems.Add(pago);
 
                         listView1.Items.Add(listViewItem);
                     }
@@ -153,7 +168,7 @@ namespace GerenciadorGastos.Forms
             }
         }
 
-        private void SetarDadosDisplayMenu(DateTime data)
+        internal void SetarDadosDisplayMenu(DateTime data)
         {
             decimal valorGastoNoMes = itemBLL.ObterGastoPorMes(data);
 
@@ -182,7 +197,7 @@ namespace GerenciadorGastos.Forms
 
             if (dataAtual.Day >= 8)
             {
-                dia8 = dia8.AddMonths(1);
+                dia8 = dia8.AddMonths(1).AddDays(-1);
             }
 
             DateTime ultimoDomingo = dataAtual;

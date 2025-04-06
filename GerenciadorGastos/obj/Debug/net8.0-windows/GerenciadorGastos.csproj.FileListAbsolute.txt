@@ -88,3 +88,7 @@ C:\Respositório C#\GerenciadorGastos\GerenciadorGastos\obj\Debug\net8.0-windows
 C:\Respositório C#\GerenciadorGastos\GerenciadorGastos\obj\Debug\net8.0-windows\GerenciadorGastos.Forms.Divida.AdicionarDivida.AdicionarDivida.resources
 C:\Respositório C#\GerenciadorGastos\GerenciadorGastos\obj\Debug\net8.0-windows\GerenciadorGastos.Forms.Divida.EditarDivida.EditarDivida.resources
 C:\Respositório C#\GerenciadorGastos\GerenciadorGastos\obj\Debug\net8.0-windows\GerenciadorGastos.Forms.Divida.RemoverDivida.RemoverDivida.resources
+C:\Respositório C#\GerenciadorGastos\GerenciadorGastos\obj\Debug\net8.0-windows\GerenciadorGastos.Forms.Terceiros.RemoverTerceiros.resources
+C:\Respositório C#\GerenciadorGastos\GerenciadorGastos\obj\Debug\net8.0-windows\GerenciadorGastos.Forms.ItemForms.PagarItem.PagarItem.resources
+C:\Respositório C#\GerenciadorGastos\GerenciadorGastos\obj\Debug\net8.0-windows\GerenciadorGastos.Forms.ItemForms.ItensPagos.resources
+C:\Respositório C#\GerenciadorGastos\GerenciadorGastos\obj\Debug\net8.0-windows\GerenciadorGastos.Forms.Terceiros.EditarTerceiro.EditarTerceiro.resources

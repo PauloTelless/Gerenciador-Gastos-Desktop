@@ -31,13 +31,25 @@
     <Compile Update="Forms\ItemForms\EditarItem\EditarItem.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\ItemForms\ItensPagos\ItensPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\ItemForms\PagarItem\PagarItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\ItemForms\RemoverItem\RemoverItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\Terceiros\AdicionarTerceiro.cs">
+    <Compile Update="Forms\Terceiros\AdicionarTerceiro\AdicionarTerceiro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\Terceiros\Terceiro.cs">
+    <Compile Update="Forms\Terceiros\EditarTerceiro\EditarTerceiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Terceiros\RemoverTerceiro\RemoverTerceiros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Terceiros\IndexTerceiro\Terceiro.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

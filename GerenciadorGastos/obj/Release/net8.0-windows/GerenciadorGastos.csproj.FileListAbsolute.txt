@@ -88,3 +88,7 @@ C:\Respositório C#\GerenciadorGastos\GerenciadorGastos\obj\Release\net8.0-windo
 C:\Respositório C#\GerenciadorGastos\GerenciadorGastos\obj\Release\net8.0-windows\GerenciadorGastos.Forms.Terceiros.AdicionarTerceiro.resources
 C:\Respositório C#\GerenciadorGastos\GerenciadorGastos\obj\Release\net8.0-windows\GerenciadorGastos.Forms.Terceiros.Terceiro.resources
 C:\Respositório C#\GerenciadorGastos\GerenciadorGastos\obj\Release\net8.0-windows\GerenciadorGastos.Properties.Resources.resources
+C:\Respositório C#\GerenciadorGastos\GerenciadorGastos\obj\Release\net8.0-windows\GerenciadorGastos.Forms.Terceiros.RemoverTerceiros.resources
+C:\Respositório C#\GerenciadorGastos\GerenciadorGastos\obj\Release\net8.0-windows\GerenciadorGastos.Forms.ItemForms.ItensPagos.resources
+C:\Respositório C#\GerenciadorGastos\GerenciadorGastos\obj\Release\net8.0-windows\GerenciadorGastos.Forms.ItemForms.PagarItem.PagarItem.resources
+C:\Respositório C#\GerenciadorGastos\GerenciadorGastos\obj\Release\net8.0-windows\GerenciadorGastos.Forms.Terceiros.EditarTerceiro.EditarTerceiro.resources

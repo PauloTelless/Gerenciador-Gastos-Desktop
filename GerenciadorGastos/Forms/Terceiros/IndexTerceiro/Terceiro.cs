@@ -1,15 +1,18 @@
 ﻿using GerenciadorGastos.BLL;
+using GerenciadorGastos.Forms.Terceiros.EditarTerceiro;
 
 namespace GerenciadorGastos.Forms.Terceiros;
 
 public partial class Terceiro : Form
 {
     PessoaBLL pessoaBll = new PessoaBLL();
+    private Index indexForm;
 
-    public Terceiro()
+    public Terceiro(Index indexForm)
     {
         InitializeComponent();
         PopulateListView();
+        this.indexForm = indexForm; 
     }
 
     #region Botões
@@ -18,26 +21,51 @@ public partial class Terceiro : Form
         this.Close();
     }
 
+    private void button2_Click(object sender, EventArgs e)
+    {
+        RemoverTerceiros removerTerceiros = new RemoverTerceiros(this);
+        removerTerceiros.ShowDialog();
+    }
+
+    private void button3_Click(object sender, EventArgs e)
+    {
+        AdicionarTerceiro adicionarTercieroForm = new AdicionarTerceiro();
+        adicionarTercieroForm.ShowDialog();
+    }
+
+    private void button4_Click(object sender, EventArgs e)
+    {
+        GerenciadorGastos.Forms.Terceiros.EditarTerceiro.EditarTerceiro editarTerceiroForm = new(this, indexForm);
+        editarTerceiroForm.ShowDialog();
+    }
+
     #endregion
 
     #region Funções
-    private void PopulateListView()
+    internal void PopulateListView()
     {
         listView1.Items.Clear();
         decimal somaValor = 0;
 
         try
         {
-            var pessoasItensList = pessoaBll.ObterPessoaTerceira();
+            var pessoasItensList = pessoaBll.ObterPessoasTerceirasComItens();
 
             foreach (var item in pessoasItensList)
             {
-                somaValor += item.ValorItem;
+                var pago = Convert.ToBoolean(item.Pago) ? "Sim" : "Não";
+
+                if (pago == "Não")
+                {
+                    somaValor += item.ValorItem;
+
+                }
 
                 ListViewItem listViewItem = new ListViewItem(item.PessoaNome);
                 listViewItem.SubItems.Add(item.ValorItem.ToString("C2"));
                 listViewItem.SubItems.Add(item.NomeItem.ToString());
                 listViewItem.SubItems.Add(item.DataCadastro.ToShortDateString());
+                listViewItem.SubItems.Add(pago);
 
                 listView1.Items.Add(listViewItem);
             }
@@ -58,6 +86,5 @@ public partial class Terceiro : Form
 
     }
     #endregion
-
 
 }

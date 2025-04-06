@@ -20,15 +20,15 @@ namespace GerenciadorGastos.BLL
 
                 return result;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw new Exception($"Ocorreu um erro ao obter as pessoas: {ex.Message}");
             }
 
         }
 
-        public List<PessoaItem> ObterPessoaTerceira()
+        public List<Pessoa> ObterPessoasTerceiras()
         {
             try
             {
@@ -36,10 +36,26 @@ namespace GerenciadorGastos.BLL
 
                 return result;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw new Exception($"Ocorreu um erro ao obter os terceiro: {ex.Message}");
+            }
+
+        }
+
+        public List<PessoaItem> ObterPessoasTerceirasComItens()
+        {
+            try
+            {
+                var result = pessoaDAL.ObterPessoasTerceirasComItens();
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception($"Ocorreu um erro ao obter os terceiro: {ex.Message}");
             }
         }
 
@@ -50,10 +66,37 @@ namespace GerenciadorGastos.BLL
                 pessoaDAL.AdicionarPessoa(nomePessoa);
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw new Exception($"Ocorreu um erro ao adicionar o terceiro: {ex.Message}");
+            }
+        }
+
+        public void DeletarPessoa(int pessoaId)
+        {
+            try
+            {
+                pessoaDAL.DeletarPessoa(pessoaId);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception($"Ocorreu um erro ao deletar o terceiro: {ex.Message}");
+            }
+        }
+    
+        public void EditarPessoa(int pessoaId, string nome)
+        {
+            try
+            {
+                pessoaDAL.EditarPessoa(pessoaId, nome);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception($"Ocorreu um erro ao editar o terceiro: {ex.Message}");
             }
         }
     }
