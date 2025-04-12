@@ -109,6 +109,72 @@ namespace GerenciadorGastos.DAL
             return itens;
         }
 
+        public List<Item> ObterItensPorIntervalo(DateTime data, bool pago = false)
+        {
+            DateTime dataInicio;
+            DateTime dataFim;
+
+            if (data.Day >= 8)
+            {
+                dataInicio = new DateTime(data.Year, data.Month, 8);
+                dataFim = dataInicio.AddMonths(1).AddDays(-1);
+            }
+            else
+            {
+                dataInicio = new DateTime(data.Year, data.Month, 1).AddMonths(-1).AddDays(7);
+                dataFim = new DateTime(data.Year, data.Month, 7);
+            }
+
+            string connectionString = ConfigurationManager.ConnectionStrings["SqlServerConnection"].ToString();
+            List<Item> itens = new List<Item>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = @"SELECT * FROM Item WHERE pago = 0 AND data_cadastro >= @DataInicio 
+                               AND data_cadastro <= @DataFim ORDER BY data_cadastro DESC;";
+
+                if (pago == true)
+                {
+                    query = @"SELECT * FROM Item WHERE pago = 1 AND data_cadastro >= @DataInicio 
+                               AND data_cadastro <= @DataFim ORDER BY data_cadastro DESC;";
+
+                }
+
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@DataInicio", dataInicio);
+                command.Parameters.AddWithValue("@DataFim", dataFim);
+
+                try
+                {
+                    connection.Open();
+
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Item item = new Item
+                            {
+                                ItemId = reader.GetInt32(reader.GetOrdinal("item_id")),
+                                NomeItem = reader.GetString(reader.GetOrdinal("nome_item")),
+                                ValorItem = reader.GetDecimal(reader.GetOrdinal("valor_item")),
+                                DataCadastroItem = reader.GetDateTime(reader.GetOrdinal("data_cadastro")),
+                                Pago = reader.GetBoolean(reader.GetOrdinal("pago")),
+                            };
+
+                            itens.Add(item);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Erro ao acessar banco de dados: " + ex.Message);
+                }
+            }
+
+            return itens;
+        }
+
         public void AdicionarItem(Item item)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["SqlServerConnection"].ToString();
@@ -189,6 +255,41 @@ namespace GerenciadorGastos.DAL
                 dataInicio = new DateTime(data.Year, data.Month, 1).AddMonths(-1).AddDays(7);
                 dataFim = new DateTime(data.Year, data.Month, 7);
             }
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = @"SELECT SUM(valor_item) AS TotalValor 
+                               FROM Item 
+                               WHERE data_cadastro >= @DataInicio 
+                               AND data_cadastro <= @DataFim 
+                               AND pessoa_id = 1 AND pago = 0";
+
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@DataInicio", dataInicio);
+                command.Parameters.AddWithValue("@DataFim", dataFim);
+
+                try
+                {
+                    connection.Open();
+                    var result = command.ExecuteScalar();
+
+                    totalValor = result == DBNull.Value || result == null
+                        ? 0
+                        : Convert.ToDecimal(result);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Erro ao obter a soma do valor_item: " + ex.Message);
+                }
+            }
+
+            return totalValor;
+        }
+
+        public decimal ObterSomaValorSemanaAtual(DateTime dataInicio, DateTime dataFim)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["SqlServerConnection"].ToString();
+            decimal totalValor = 0;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

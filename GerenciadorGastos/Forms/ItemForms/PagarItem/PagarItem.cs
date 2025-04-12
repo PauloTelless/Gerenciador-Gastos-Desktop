@@ -28,8 +28,10 @@ namespace GerenciadorGastos.Forms.ItemForms.PagarItem
         #region Funções
         internal void PopulateCheckListBox()
         {
+            var data = DateTime.Now;
+
             checkedListBox1.Items.Clear();
-            var itemList = ItemBLL.ObterItems();
+            var itemList = ItemBLL.ObterItensPorIntervalo(data);
 
             foreach (var item in itemList)
             {
@@ -50,7 +52,7 @@ namespace GerenciadorGastos.Forms.ItemForms.PagarItem
 
             var dataSelecionada = dateTimePicker1.Value.Date;
 
-            var itemList = ItemBLL.ObterItems(dataSelecionada);
+            var itemList = ItemBLL.ObterItensPorIntervalo(dataSelecionada);
 
             foreach (var item in itemList)
             {
@@ -119,7 +121,7 @@ namespace GerenciadorGastos.Forms.ItemForms.PagarItem
             }
         }
         #endregion
-       
-        
+
+
     }
 }

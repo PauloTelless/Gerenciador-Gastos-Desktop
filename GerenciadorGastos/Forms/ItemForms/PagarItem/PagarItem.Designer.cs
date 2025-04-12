@@ -57,17 +57,21 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(146, 33);
+            label1.Location = new Point(252, 35);
             label1.Name = "label1";
-            label1.Size = new Size(149, 25);
+            label1.Size = new Size(147, 25);
             label1.TabIndex = 1;
-            label1.Text = "Procure por data:";
+            label1.Text = "Procure por mês:";
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(299, 33);
+            dateTimePicker1.Checked = false;
+            dateTimePicker1.CustomFormat = "MMM";
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.Location = new Point(407, 35);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(329, 27);
+            dateTimePicker1.ShowUpDown = true;
+            dateTimePicker1.Size = new Size(62, 27);
             dateTimePicker1.TabIndex = 2;
             dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 

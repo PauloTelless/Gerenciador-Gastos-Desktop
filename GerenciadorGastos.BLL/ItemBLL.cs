@@ -22,6 +22,21 @@ namespace GerenciadorGastos.BLL
             }
         }
 
+        public List<Item> ObterItensPorIntervalo(DateTime data, bool pago = false)
+        {
+            try
+            {
+                var result = itemDAL.ObterItensPorIntervalo(data);
+
+                return result;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public List<Item> ObterItems(bool pago = false)
         {
             try
@@ -61,6 +76,21 @@ namespace GerenciadorGastos.BLL
             catch (Exception ex)
             {
                 throw new Exception("Erro ao adicionar item: " + ex.Message);
+            }
+        }
+
+        public decimal ObterSomaValorSemanaAtual(DateTime dataInicio, DateTime dataFim)
+        {
+            try
+            {
+                var result = itemDAL.ObterSomaValorSemanaAtual(dataInicio, dataFim);
+
+                return result;  
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception($"Ocorreu um erro ao obter o gasto da semana atual. {ex.Message}");
             }
         }
 

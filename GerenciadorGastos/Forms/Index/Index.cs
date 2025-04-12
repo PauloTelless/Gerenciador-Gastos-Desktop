@@ -170,6 +170,8 @@ namespace GerenciadorGastos.Forms
 
         internal void SetarDadosDisplayMenu(DateTime data)
         {
+            var dataAtual = DateTime.Now;
+
             decimal valorGastoNoMes = itemBLL.ObterGastoPorMes(data);
 
             decimal faturaLimite = faturaBLL.ObterValorAtualFatura();
@@ -177,13 +179,19 @@ namespace GerenciadorGastos.Forms
             decimal divida = dividaBLL.ObterValorDividas();
 
             decimal valorTotalMes = valorGastoNoMes + (gastoFixo + divida);
-
             decimal valorRestanteMes = faturaLimite - valorTotalMes;
 
-            var dataAtual = DateTime.Now;
             int numeroDeSemanas = CalcularNumeroDeSemanas(dataAtual);
 
-            var disponivelPorSemana = valorRestanteMes / numeroDeSemanas;
+            decimal valorDisponivelFaturaLiquida = faturaLimite - (gastoFixo + divida);
+
+            int diasDesdeDomingo = (int)data.DayOfWeek; 
+            DateTime domingo = diasDesdeDomingo == 0 ? data : data.AddDays(-diasDesdeDomingo); 
+            DateTime sabado = domingo.AddDays(6);
+
+            decimal gastoSemanaAtual = itemBLL.ObterSomaValorSemanaAtual(domingo, sabado);
+            decimal valorPorSemana = valorDisponivelFaturaLiquida / numeroDeSemanas;
+            var disponivelPorSemana = valorPorSemana - gastoSemanaAtual;
 
             label9.Text = valorRestanteMes.ToString("C2");
             label8.Text = disponivelPorSemana.ToString("C2");
