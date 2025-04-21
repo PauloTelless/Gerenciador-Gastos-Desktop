@@ -1856,19 +1856,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Paulo\\.nuget\\packages\\": {}
+    "C:\\Users\\Paulo\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Respositório C#\\GerenciadorGastos\\GerenciadorGastos\\GerenciadorGastos.csproj",
+      "projectUniqueName": "C:\\ProjetosPessoais\\Gerenciador-Gastos-Desktop\\GerenciadorGastos\\GerenciadorGastos.csproj",
       "projectName": "GerenciadorGastos",
-      "projectPath": "C:\\Respositório C#\\GerenciadorGastos\\GerenciadorGastos\\GerenciadorGastos.csproj",
+      "projectPath": "C:\\ProjetosPessoais\\Gerenciador-Gastos-Desktop\\GerenciadorGastos\\GerenciadorGastos.csproj",
       "packagesPath": "C:\\Users\\Paulo\\.nuget\\packages\\",
-      "outputPath": "C:\\Respositório C#\\GerenciadorGastos\\GerenciadorGastos\\obj\\",
+      "outputPath": "C:\\ProjetosPessoais\\Gerenciador-Gastos-Desktop\\GerenciadorGastos\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\Paulo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1882,11 +1887,11 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Respositório C#\\GerenciadorGastos\\GerenciadorGastos.BLL\\GerenciadorGastos.BLL.csproj": {
-              "projectPath": "C:\\Respositório C#\\GerenciadorGastos\\GerenciadorGastos.BLL\\GerenciadorGastos.BLL.csproj"
+            "C:\\ProjetosPessoais\\Gerenciador-Gastos-Desktop\\GerenciadorGastos.BLL\\GerenciadorGastos.BLL.csproj": {
+              "projectPath": "C:\\ProjetosPessoais\\Gerenciador-Gastos-Desktop\\GerenciadorGastos.BLL\\GerenciadorGastos.BLL.csproj"
             },
-            "C:\\Respositório C#\\GerenciadorGastos\\GerenciadorGastos.DAL\\GerenciadorGastos.DAL.csproj": {
-              "projectPath": "C:\\Respositório C#\\GerenciadorGastos\\GerenciadorGastos.DAL\\GerenciadorGastos.DAL.csproj"
+            "C:\\ProjetosPessoais\\Gerenciador-Gastos-Desktop\\GerenciadorGastos.DAL\\GerenciadorGastos.DAL.csproj": {
+              "projectPath": "C:\\ProjetosPessoais\\Gerenciador-Gastos-Desktop\\GerenciadorGastos.DAL\\GerenciadorGastos.DAL.csproj"
             }
           }
         }
@@ -1900,7 +1905,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -1930,7 +1936,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

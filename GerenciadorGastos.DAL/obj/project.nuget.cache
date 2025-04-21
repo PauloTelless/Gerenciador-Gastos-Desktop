@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QowNG86ehGIXh9PMFyOPSP2hhsCuDTDZ4YwCz3LsNw8Y/xc8q+LFPeFad7FO3xLwu4Mx9sne0wyKjKkurlbQlg==",
+  "dgSpecHash": "Ojyy7+WZMkY=",
   "success": true,
-  "projectFilePath": "C:\\Respositório C#\\GerenciadorGastos\\GerenciadorGastos.DAL\\GerenciadorGastos.DAL.csproj",
+  "projectFilePath": "C:\\ProjetosPessoais\\Gerenciador-Gastos-Desktop\\GerenciadorGastos.DAL\\GerenciadorGastos.DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Paulo\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Paulo\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

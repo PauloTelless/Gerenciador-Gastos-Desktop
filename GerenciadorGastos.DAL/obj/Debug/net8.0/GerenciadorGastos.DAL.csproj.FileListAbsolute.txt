@@ -11,3 +11,16 @@ C:\Respositório C#\GerenciadorGastos\GerenciadorGastos.DAL\obj\Debug\net8.0\ref
 C:\Respositório C#\GerenciadorGastos\GerenciadorGastos.DAL\obj\Debug\net8.0\GerenciadorGastos.DAL.pdb
 C:\Respositório C#\GerenciadorGastos\GerenciadorGastos.DAL\obj\Debug\net8.0\ref\GerenciadorGastos.DAL.dll
 C:\Respositório C#\GerenciadorGastos\GerenciadorGastos.DAL\obj\Debug\net8.0\GerenciadorGastos.DAL.csproj.AssemblyReference.cache
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.DAL\bin\Debug\net8.0\GerenciadorGastos.DAL.deps.json
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.DAL\bin\Debug\net8.0\GerenciadorGastos.DAL.dll
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.DAL\bin\Debug\net8.0\GerenciadorGastos.DAL.pdb
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.DAL\obj\Debug\net8.0\GerenciadorGastos.DAL.csproj.AssemblyReference.cache
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.DAL\obj\Debug\net8.0\GerenciadorGastos.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.DAL\obj\Debug\net8.0\GerenciadorGastos.DAL.AssemblyInfoInputs.cache
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.DAL\obj\Debug\net8.0\GerenciadorGastos.DAL.AssemblyInfo.cs
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.DAL\obj\Debug\net8.0\GerenciadorGastos.DAL.csproj.CoreCompileInputs.cache
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.DAL\obj\Debug\net8.0\GerenciadorGastos.DAL.sourcelink.json
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.DAL\obj\Debug\net8.0\GerenciadorGastos.DAL.dll
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.DAL\obj\Debug\net8.0\refint\GerenciadorGastos.DAL.dll
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.DAL\obj\Debug\net8.0\GerenciadorGastos.DAL.pdb
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.DAL\obj\Debug\net8.0\ref\GerenciadorGastos.DAL.dll

@@ -14,3 +14,19 @@ C:\Respositório C#\GerenciadorGastos\GerenciadorGastos.BLL\obj\Release\net8.0\G
 C:\Respositório C#\GerenciadorGastos\GerenciadorGastos.BLL\obj\Release\net8.0\refint\GerenciadorGastos.BLL.dll
 C:\Respositório C#\GerenciadorGastos\GerenciadorGastos.BLL\obj\Release\net8.0\GerenciadorGastos.BLL.pdb
 C:\Respositório C#\GerenciadorGastos\GerenciadorGastos.BLL\obj\Release\net8.0\ref\GerenciadorGastos.BLL.dll
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.BLL\bin\Release\net8.0\GerenciadorGastos.BLL.deps.json
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.BLL\bin\Release\net8.0\GerenciadorGastos.BLL.dll
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.BLL\bin\Release\net8.0\GerenciadorGastos.BLL.pdb
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.BLL\bin\Release\net8.0\GerenciadorGastos.DAL.dll
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.BLL\bin\Release\net8.0\GerenciadorGastos.DAL.pdb
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.BLL\obj\Release\net8.0\GerenciadorGastos.BLL.csproj.AssemblyReference.cache
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.BLL\obj\Release\net8.0\GerenciadorGastos.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.BLL\obj\Release\net8.0\GerenciadorGastos.BLL.AssemblyInfoInputs.cache
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.BLL\obj\Release\net8.0\GerenciadorGastos.BLL.AssemblyInfo.cs
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.BLL\obj\Release\net8.0\GerenciadorGastos.BLL.csproj.CoreCompileInputs.cache
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.BLL\obj\Release\net8.0\GerenciadorGastos.BLL.sourcelink.json
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.BLL\obj\Release\net8.0\Gerencia.7378DD94.Up2Date
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.BLL\obj\Release\net8.0\GerenciadorGastos.BLL.dll
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.BLL\obj\Release\net8.0\refint\GerenciadorGastos.BLL.dll
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.BLL\obj\Release\net8.0\GerenciadorGastos.BLL.pdb
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos.BLL\obj\Release\net8.0\ref\GerenciadorGastos.BLL.dll

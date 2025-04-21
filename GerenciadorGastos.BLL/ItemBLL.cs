@@ -22,11 +22,11 @@ namespace GerenciadorGastos.BLL
             }
         }
 
-        public List<Item> ObterItensPorIntervalo(DateTime data, bool pago = false)
+        public List<Item> ObterItensPorIntervalo(DateTime data, bool pago)
         {
             try
             {
-                var result = itemDAL.ObterItensPorIntervalo(data);
+                var result = itemDAL.ObterItensPorIntervalo(data, pago);
 
                 return result;
             }

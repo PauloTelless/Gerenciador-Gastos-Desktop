@@ -6,10 +6,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace GerenciadorGastos.Forms.ItemForms.PagarItem
 {
@@ -17,6 +19,7 @@ namespace GerenciadorGastos.Forms.ItemForms.PagarItem
     {
         ItemBLL ItemBLL = new ItemBLL();
         private Index indexForm;
+        private decimal totalValor;
 
         public PagarItem(Index indexForm)
         {
@@ -28,13 +31,20 @@ namespace GerenciadorGastos.Forms.ItemForms.PagarItem
         #region Funções
         internal void PopulateCheckListBox()
         {
+            totalValor = 0;
+
             var data = DateTime.Now;
 
             checkedListBox1.Items.Clear();
-            var itemList = ItemBLL.ObterItensPorIntervalo(data);
+            var itemList = ItemBLL.ObterItensPorIntervalo(data, false);
 
             foreach (var item in itemList)
             {
+                if (item.PessoaId == 1)
+                {
+                    totalValor += item.ValorItem;
+                }
+
                 checkedListBox1.Items.Add(new Item()
                 {
                     ItemId = item.ItemId,
@@ -42,20 +52,30 @@ namespace GerenciadorGastos.Forms.ItemForms.PagarItem
                     ValorItem = item.ValorItem,
                     DataCadastroItem = item.DataCadastroItem,
                 });
+
+                string mes = data.ToString("MMMM", new CultureInfo("pt-BR")).ToUpper();
+
+                label2.Text = $"Valor total gasto em {mes}: R$ {totalValor}";
             }
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
+            totalValor = 0;
 
             checkedListBox1.Items.Clear();
 
             var dataSelecionada = dateTimePicker1.Value.Date;
 
-            var itemList = ItemBLL.ObterItensPorIntervalo(dataSelecionada);
+            var itemList = ItemBLL.ObterItensPorIntervalo(dataSelecionada, false);
 
             foreach (var item in itemList)
             {
+                if (item.PessoaId == 1)
+                {
+                    totalValor += item.ValorItem;
+                }
+
                 checkedListBox1.Items.Add(new Item()
                 {
                     ItemId = item.ItemId,
@@ -64,6 +84,10 @@ namespace GerenciadorGastos.Forms.ItemForms.PagarItem
                     DataCadastroItem = item.DataCadastroItem,
                 });
             }
+
+            string mes = dataSelecionada.ToString("MMMM", new CultureInfo("pt-BR")).ToUpper();
+
+            label2.Text = $"Valor total gasto em {mes}: R$ {totalValor}";
 
         }
 

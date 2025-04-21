@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0SSn/cYh/oi45ty+JGBTc5F69rLCyrIHI9v9FjjAubVqnTfoc7qMmK+UW0NWtYbtx9lwCiOcz8NfkRGUmLfGSQ==",
+  "dgSpecHash": "xaMm7BJVsmo=",
   "success": true,
-  "projectFilePath": "C:\\Respositório C#\\GerenciadorGastos\\GerenciadorGastos\\GerenciadorGastos.csproj",
+  "projectFilePath": "C:\\ProjetosPessoais\\Gerenciador-Gastos-Desktop\\GerenciadorGastos\\GerenciadorGastos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Paulo\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Paulo\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

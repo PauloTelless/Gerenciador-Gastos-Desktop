@@ -201,30 +201,28 @@ namespace GerenciadorGastos.Forms
 
         private int CalcularNumeroDeSemanas(DateTime dataAtual)
         {
-            DateTime dia8 = new DateTime(dataAtual.Year, dataAtual.Month, 8);
+            DateTime inicio = new DateTime(dataAtual.Year, dataAtual.Month, 1).AddMonths(-1).AddDays(6); 
 
-            if (dataAtual.Day >= 8)
-            {
-                dia8 = dia8.AddMonths(1).AddDays(-1);
-            }
+            DateTime fim = new DateTime(dataAtual.Year, dataAtual.Month, 8);
 
-            DateTime ultimoDomingo = dataAtual;
-            while (ultimoDomingo.DayOfWeek != DayOfWeek.Sunday)
+            DateTime primeiroDomingo = inicio;
+            while (primeiroDomingo.DayOfWeek != DayOfWeek.Sunday)
             {
-                ultimoDomingo = ultimoDomingo.AddDays(-1);
+                primeiroDomingo = primeiroDomingo.AddDays(1);
             }
 
             int semanas = 0;
-            DateTime proximoDomingo = ultimoDomingo.AddDays(7);
+            DateTime atual = primeiroDomingo;
 
-            while (proximoDomingo < dia8)
+            while (atual.AddDays(7) <= fim)
             {
                 semanas++;
-                proximoDomingo = proximoDomingo.AddDays(7);
+                atual = atual.AddDays(7);
             }
 
             return Math.Max(semanas, 1);
         }
+
 
         #endregion
 

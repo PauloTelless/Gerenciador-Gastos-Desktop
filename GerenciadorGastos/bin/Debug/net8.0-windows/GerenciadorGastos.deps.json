@@ -490,7 +490,10 @@
           "GerenciadorGastos.DAL": "1.0.0"
         },
         "runtime": {
-          "GerenciadorGastos.BLL.dll": {}
+          "GerenciadorGastos.BLL.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "GerenciadorGastos.DAL/1.0.0": {
@@ -499,7 +502,10 @@
           "System.Data.SqlClient": "4.9.0"
         },
         "runtime": {
-          "GerenciadorGastos.DAL.dll": {}
+          "GerenciadorGastos.DAL.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

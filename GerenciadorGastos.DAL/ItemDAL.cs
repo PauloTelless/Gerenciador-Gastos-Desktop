@@ -159,6 +159,7 @@ namespace GerenciadorGastos.DAL
                                 NomeItem = reader.GetString(reader.GetOrdinal("nome_item")),
                                 ValorItem = reader.GetDecimal(reader.GetOrdinal("valor_item")),
                                 DataCadastroItem = reader.GetDateTime(reader.GetOrdinal("data_cadastro")),
+                                PessoaId = reader.GetInt32(reader.GetOrdinal("pessoa_id")),
                                 Pago = reader.GetBoolean(reader.GetOrdinal("pago")),
                             };
 
