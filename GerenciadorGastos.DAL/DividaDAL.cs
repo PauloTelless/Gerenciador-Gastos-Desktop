@@ -6,14 +6,16 @@ namespace GerenciadorGastos.DAL;
 
 public class DividaDAL
 {
-    public List<Divida> ObterDividas()
+    public List<Divida> ObterDividas(bool ativo = true)
     {
         string connectionString = ConfigurationManager.ConnectionStrings["SqlServerConnection"].ToString();
         List<Divida> dividas = new List<Divida>();
 
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
-            string query = "SELECT divida_id, nome_divida, data_cadastro_divida, valor_divida FROM Divida";
+            string filtro = ativo ? "WHERE divida_ativa = 1" : "";
+
+            string query = $"SELECT divida_id, nome_divida, data_cadastro_divida, valor_divida, parcela_divida, divida_ativa, parcela_divida_paga, parcela_divida_valor_liquido FROM Divida {filtro}";
 
             try
             {
@@ -32,7 +34,12 @@ public class DividaDAL
                                 DividaId = reader.GetInt32(reader.GetOrdinal("divida_id")),
                                 NomeDivida = reader.GetString(reader.GetOrdinal("nome_divida")),
                                 DataCadastroDivida = reader.GetDateTime(reader.GetOrdinal("data_cadastro_divida")),
-                                ValorDivida = reader.GetDecimal(reader.GetOrdinal("valor_divida"))
+                                ValorDivida = reader.GetDecimal(reader.GetOrdinal("valor_divida")),
+                                ParcelaDivida = reader.GetInt32(reader.GetOrdinal("parcela_divida")),
+                                DividaAtiva = reader.GetBoolean(reader.GetOrdinal("divida_ativa")),
+                                ParcelaDividaPaga = reader.GetInt32(reader.GetOrdinal("parcela_divida_paga")),
+                                ParcelaDividaValorLiquido = reader.GetDecimal(reader.GetOrdinal("parcela_divida_valor_liquido"))
+
                             };
 
                             dividas.Add(divida);
@@ -57,7 +64,9 @@ public class DividaDAL
 
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
-            string query = "SELECT SUM(valor_divida) FROM Divida;";
+            string query = @"
+            SELECT SUM(valor_divida / CAST(parcela_divida AS FLOAT)) AS soma_parcelas
+            FROM Divida WHERE divida_ativa = 1;";
 
             try
             {
@@ -117,7 +126,8 @@ public class DividaDAL
         string query = @"UPDATE Divida 
         SET nome_divida = @nomeDivida, 
             data_cadastro_divida = @dataCadastroDivida, 
-            valor_divida = @valorDivida 
+            valor_divida = @valorDivida ,
+            divida_ativa = @dividaAtiva
         WHERE divida_id = @dividaId
         ";
 
@@ -127,6 +137,7 @@ public class DividaDAL
             sqlCommand.Parameters.AddWithValue("@nomeDivida", divida.NomeDivida);
             sqlCommand.Parameters.AddWithValue("@dataCadastroDivida", divida.DataCadastroDivida);
             sqlCommand.Parameters.AddWithValue("@valorDivida", divida.ValorDivida);
+            sqlCommand.Parameters.AddWithValue("@dividaAtiva", divida.DividaAtiva);
             sqlCommand.Parameters.AddWithValue("@dividaId", divida.DividaId);
 
             try
@@ -166,4 +177,36 @@ public class DividaDAL
         }
     }
 
+    public void AnteciparParcela(int dividaId, int novaParcela, decimal novoValorDivida, int quantidadeParcelaAntecipada, bool quitarDivida = false)
+    {
+        string connectionString = ConfigurationManager.ConnectionStrings["SqlServerConnection"].ToString();
+
+        string filtro = quitarDivida ? "divida_ativa = 0," : "";
+
+        string query = $@"UPDATE Divida SET parcela_divida_valor_liquido = @novoValorDivida, {filtro} parcela_divida_paga = @quantidadeParcelaAntecipada
+                    WHERE divida_id = @divida_id";
+
+        using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+        {
+            using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+            {
+                sqlCommand.Parameters.AddWithValue("@novoValorDivida", novoValorDivida);
+                sqlCommand.Parameters.AddWithValue("@novaParcela", novaParcela);
+                sqlCommand.Parameters.AddWithValue("@divida_id", dividaId);
+                sqlCommand.Parameters.AddWithValue("@quantidadeParcelaAntecipada", quantidadeParcelaAntecipada);
+
+                try
+                {
+                    sqlConnection.Open();
+                    sqlCommand.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"Ocorreu um erro ao antecipar a parcela: {ex.Message}");
+                }
+            }
+        }
+
+
+    }
 }

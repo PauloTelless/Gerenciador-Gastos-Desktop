@@ -15,5 +15,17 @@ public class Divida
     public DateTime DataCadastroDivida { get; set; }   
     
     [Column("valor_dividas")]
-    public decimal ValorDivida { get; set; }                   
+    public decimal ValorDivida { get; set; }  
+    
+    [Column("parcela_divida")]
+    public int ParcelaDivida { get; set; }     
+    
+    [Column("parcela_divida_paga")]
+    public int ParcelaDividaPaga { get; set; }
+    
+    [Column("parcela_divida_valor_liquido")]
+    public decimal ParcelaDividaValorLiquido { get; set; }       
+
+    [Column("divida_ativa")]
+    public bool DividaAtiva { get; set; }                           
 }

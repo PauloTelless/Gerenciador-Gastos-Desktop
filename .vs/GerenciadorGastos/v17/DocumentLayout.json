@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\ProjetosPessoais\\Gerenciador-Gastos-Desktop\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B32DA507-EEC6-4095-9A86-14FAFF42468E}|GerenciadorGastos.DAL\\GerenciadorGastos.DAL.csproj|c:\\projetospessoais\\gerenciador-gastos-desktop\\gerenciadorgastos.dal\\dividadal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B32DA507-EEC6-4095-9A86-14FAFF42468E}|GerenciadorGastos.DAL\\GerenciadorGastos.DAL.csproj|solutionrelative:gerenciadorgastos.dal\\dividadal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B32DA507-EEC6-4095-9A86-14FAFF42468E}|GerenciadorGastos.DAL\\GerenciadorGastos.DAL.csproj|c:\\projetospessoais\\gerenciador-gastos-desktop\\gerenciadorgastos.dal\\faturadal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B32DA507-EEC6-4095-9A86-14FAFF42468E}|GerenciadorGastos.DAL\\GerenciadorGastos.DAL.csproj|solutionrelative:gerenciadorgastos.dal\\faturadal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,6 +43,31 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FaturaDAL.cs",
+              "DocumentMoniker": "C:\\ProjetosPessoais\\Gerenciador-Gastos-Desktop\\GerenciadorGastos.DAL\\FaturaDAL.cs",
+              "RelativeDocumentMoniker": "GerenciadorGastos.DAL\\FaturaDAL.cs",
+              "ToolTip": "C:\\ProjetosPessoais\\Gerenciador-Gastos-Desktop\\GerenciadorGastos.DAL\\FaturaDAL.cs",
+              "RelativeToolTip": "GerenciadorGastos.DAL\\FaturaDAL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T04:10:14.431Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DividaDAL.cs",
+              "DocumentMoniker": "C:\\ProjetosPessoais\\Gerenciador-Gastos-Desktop\\GerenciadorGastos.DAL\\DividaDAL.cs",
+              "RelativeDocumentMoniker": "GerenciadorGastos.DAL\\DividaDAL.cs",
+              "ToolTip": "C:\\ProjetosPessoais\\Gerenciador-Gastos-Desktop\\GerenciadorGastos.DAL\\DividaDAL.cs",
+              "RelativeToolTip": "GerenciadorGastos.DAL\\DividaDAL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T04:10:12.696Z",
+              "EditorCaption": ""
             }
           ]
         }

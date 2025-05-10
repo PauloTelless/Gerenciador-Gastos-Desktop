@@ -7,11 +7,11 @@ public class DividaBLL
 {
     DividaDAL dividaDAL = new DividaDAL();
 
-    public List<Divida> ObterDividas()
+    public List<Divida> ObterDividas(bool ativo = true)
     {
         try
         {
-            var result = dividaDAL.ObterDividas();
+            var result = dividaDAL.ObterDividas(ativo);
 
             return result;
         }
@@ -76,6 +76,19 @@ public class DividaBLL
         {
 
             throw new Exception($"Ocorreu um erro {ex.Message}");
+        }
+    }
+    
+    public void AnteciparParcela(int dividaId, int novaParcela, decimal novoValorDivida, int quantidadeParcelaAntecipada, bool quitarDivida = false)
+    {
+        try
+        {
+            dividaDAL.AnteciparParcela(dividaId, novaParcela, novoValorDivida, quantidadeParcelaAntecipada, quitarDivida);
+        }
+        catch (Exception ex)
+        {
+
+            throw new Exception($"Erro ao antecipar parcela: {ex.Message}");
         }
     }
 }
