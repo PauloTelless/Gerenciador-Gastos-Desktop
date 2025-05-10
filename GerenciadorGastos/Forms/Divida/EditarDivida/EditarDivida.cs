@@ -50,6 +50,7 @@ namespace GerenciadorGastos.Forms.Divida.EditarDivida
                         NomeDivida = textBox1.Text,
                         ValorDivida = valorItem,
                         DataCadastroDivida = dataCadastro,
+                        DividaAtiva = checkBox1.Checked
                     };
 
                     dividaBLL.EditarDivida(divida);
@@ -96,6 +97,7 @@ namespace GerenciadorGastos.Forms.Divida.EditarDivida
             label2.Visible = false;
             label3.Visible = false;
             label1.Visible = false;
+            checkBox1.Visible = false;
 
             textBox1.Visible = false;
             textBox2.Visible = false;
@@ -113,7 +115,19 @@ namespace GerenciadorGastos.Forms.Divida.EditarDivida
             label1.Visible = true;
 
             textBox1.Visible = true;
+
+            if (comboBoxSelecionado.DividaAtiva)
+            {
+                checkBox1.Checked = true;
+            }
+            else
+            {
+                checkBox1.Checked = false;
+
+            }
+
             textBox2.Visible = true;
+            checkBox1.Visible = true;
 
             textBox1.Text = comboBoxSelecionado.NomeDivida;
             textBox2.Text = comboBoxSelecionado.ValorDivida.ToString();
@@ -124,16 +138,18 @@ namespace GerenciadorGastos.Forms.Divida.EditarDivida
 
         private void PopulaComboBox()
         {
-            var dividasList = dividaBLL.ObterDividas();
+            var dividasList = dividaBLL.ObterDividas(false);
 
             foreach (var divida in dividasList)
             {
+
                 comboBox1.Items.Add(new ComboBoxEditarDivida()
                 {
                     DividaId = divida.DividaId,
                     NomeDivida = divida.NomeDivida,
                     ValorDivida = divida.ValorDivida,
-                    DataCadastroDivida = divida.DataCadastroDivida
+                    DataCadastroDivida = divida.DataCadastroDivida,
+                    DividaAtiva = divida.DividaAtiva
 
                 });
             }
@@ -150,6 +166,8 @@ namespace GerenciadorGastos.Forms.Divida.EditarDivida
             public string NomeDivida { get; set; }
 
             public decimal ValorDivida { get; set; }
+
+            public bool DividaAtiva { get; set; }
 
             public DateTime DataCadastroDivida { get; set; }
 

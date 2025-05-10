@@ -4,6 +4,7 @@ using GerenciadorGastos.Forms.CustoFixo.AlterarCusto;
 using GerenciadorGastos.Forms.CustoFixo.RemoverCusto;
 using GerenciadorGastos.Forms.Divida.AdicionarDivida;
 using GerenciadorGastos.Forms.Divida.EditarDivida;
+using GerenciadorGastos.Forms.Divida.PagarParcela;
 using GerenciadorGastos.Forms.Divida.RemoverDivida;
 using System.Globalization;
 
@@ -25,6 +26,12 @@ namespace GerenciadorGastos.Forms.ItemForms
         }
 
         #region Botões
+        private void button10_Click_1(object sender, EventArgs e)
+        {
+            PagarParcela pagarParcelaForm = new PagarParcela(this, indexForm);
+            pagarParcelaForm.ShowDialog();
+        }
+
         private void button8_Click(object sender, EventArgs e)
         {
 
@@ -118,7 +125,7 @@ namespace GerenciadorGastos.Forms.ItemForms
             }
         }
 
-        private void PopulateListViewDivida()
+        internal void PopulateListViewDivida()
         {
             listView2.Items.Clear();
 
@@ -126,8 +133,20 @@ namespace GerenciadorGastos.Forms.ItemForms
 
             foreach (var divida in dividaList)
             {
+                
+                var parcelaAtual = ObterParcelaAtual(divida.ParcelaDivida, divida.DataCadastroDivida);
+
+                if (divida.ParcelaDividaPaga != 0)
+                {
+                    parcelaAtual += divida.ParcelaDividaPaga;
+                }
+
+                var valorParcela = divida.ValorDivida / divida.ParcelaDivida;
                 ListViewItem listViewItem = new ListViewItem(divida.NomeDivida);
-                listViewItem.SubItems.Add(divida.ValorDivida.ToString("C2"));
+                listViewItem.SubItems.Add(divida.ParcelaDividaValorLiquido.ToString("C2"));
+                listViewItem.SubItems.Add(parcelaAtual.ToString());
+                listViewItem.SubItems.Add(divida.ParcelaDivida.ToString());
+                listViewItem.SubItems.Add(valorParcela.ToString("C2"));
 
                 listView2.Items.Add(listViewItem);
 
@@ -136,6 +155,23 @@ namespace GerenciadorGastos.Forms.ItemForms
                     column.Width = -2;
                 }
             }
+        }
+
+        private int ObterParcelaAtual(int parcelaTotal, DateTime dataCadastro)
+        {
+            DateTime dataAtual = DateTime.Now;
+
+            int mesesDecorridos = (dataAtual.Year - dataCadastro.Year) * 12 + (dataAtual.Month - dataCadastro.Month);
+
+            if (dataAtual.Day < dataCadastro.Day)
+                mesesDecorridos--;
+
+            int parcelaAtual = mesesDecorridos + 1;
+
+            if (parcelaAtual < 1) parcelaAtual = 1;
+            if (parcelaAtual > parcelaTotal) parcelaAtual = parcelaTotal;
+
+            return parcelaAtual;
         }
 
         private void SetValoresLabel()

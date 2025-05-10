@@ -186,3 +186,4 @@ C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos\obj\Debug\net8.
 C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos\obj\Debug\net8.0-windows\GerenciadorGastos.pdb
 C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos\obj\Debug\net8.0-windows\GerenciadorGastos.genruntimeconfig.cache
 C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos\obj\Debug\net8.0-windows\ref\GerenciadorGastos.dll
+C:\ProjetosPessoais\Gerenciador-Gastos-Desktop\GerenciadorGastos\obj\Debug\net8.0-windows\GerenciadorGastos.Forms.Divida.PagarParcela.PagarParcela.resources

@@ -45,6 +45,9 @@
             listView2 = new ListView();
             columnHeader4 = new ColumnHeader();
             columnHeader5 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader6 = new ColumnHeader();
+            columnHeader7 = new ColumnHeader();
             button4 = new Button();
             button5 = new Button();
             button6 = new Button();
@@ -60,6 +63,7 @@
             label14 = new Label();
             label15 = new Label();
             button9 = new Button();
+            button10 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -67,9 +71,9 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(485, 9);
+            label1.Location = new Point(424, 7);
             label1.Name = "label1";
-            label1.Size = new Size(280, 46);
+            label1.Size = new Size(223, 37);
             label1.TabIndex = 15;
             label1.Text = "Ajustando Custos";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -77,9 +81,10 @@
             // listView1
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader3 });
-            listView1.Location = new Point(64, 109);
+            listView1.Location = new Point(56, 93);
+            listView1.Margin = new Padding(3, 2, 3, 2);
             listView1.Name = "listView1";
-            listView1.Size = new Size(340, 184);
+            listView1.Size = new Size(298, 139);
             listView1.TabIndex = 16;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -95,18 +100,18 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(64, 44);
+            label2.Location = new Point(56, 33);
             label2.Name = "label2";
-            label2.Size = new Size(81, 20);
+            label2.Size = new Size(65, 15);
             label2.TabIndex = 17;
             label2.Text = "Gasto Fixo:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(142, 44);
+            label3.Location = new Point(124, 33);
             label3.Name = "label3";
-            label3.Size = new Size(50, 20);
+            label3.Size = new Size(38, 15);
             label3.TabIndex = 18;
             label3.Text = "label3";
             // 
@@ -115,9 +120,10 @@
             button1.BackColor = Color.SeaGreen;
             button1.Cursor = Cursors.Hand;
             button1.ForeColor = Color.White;
-            button1.Location = new Point(64, 299);
+            button1.Location = new Point(56, 235);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(193, 29);
+            button1.Size = new Size(169, 22);
             button1.TabIndex = 19;
             button1.Text = "ADICIONAR CUSTO FIXO";
             button1.UseVisualStyleBackColor = false;
@@ -128,9 +134,10 @@
             button2.BackColor = Color.Brown;
             button2.Cursor = Cursors.Hand;
             button2.ForeColor = Color.White;
-            button2.Location = new Point(64, 334);
+            button2.Location = new Point(56, 261);
+            button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(193, 29);
+            button2.Size = new Size(169, 22);
             button2.TabIndex = 20;
             button2.Text = "REMOVER CUSTO";
             button2.UseVisualStyleBackColor = false;
@@ -141,9 +148,10 @@
             button3.BackColor = Color.SteelBlue;
             button3.Cursor = Cursors.Hand;
             button3.ForeColor = Color.White;
-            button3.Location = new Point(64, 369);
+            button3.Location = new Point(56, 288);
+            button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
-            button3.Size = new Size(193, 29);
+            button3.Size = new Size(169, 22);
             button3.TabIndex = 21;
             button3.Text = "EDITAR CUSTO";
             button3.UseVisualStyleBackColor = false;
@@ -152,45 +160,46 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(64, 64);
+            label4.Location = new Point(56, 48);
             label4.Name = "label4";
-            label4.Size = new Size(55, 20);
+            label4.Size = new Size(43, 15);
             label4.TabIndex = 22;
             label4.Text = "Dívida:";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(116, 64);
+            label5.Location = new Point(102, 48);
             label5.Name = "label5";
-            label5.Size = new Size(50, 20);
+            label5.Size = new Size(38, 15);
             label5.TabIndex = 23;
             label5.Text = "label5";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(64, 85);
+            label6.Location = new Point(56, 64);
             label6.Name = "label6";
-            label6.Size = new Size(45, 20);
+            label6.Size = new Size(35, 15);
             label6.TabIndex = 24;
             label6.Text = "Total:";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(105, 85);
+            label7.Location = new Point(92, 64);
             label7.Name = "label7";
-            label7.Size = new Size(50, 20);
+            label7.Size = new Size(38, 15);
             label7.TabIndex = 25;
             label7.Text = "label7";
             // 
             // listView2
             // 
-            listView2.Columns.AddRange(new ColumnHeader[] { columnHeader4, columnHeader5 });
-            listView2.Location = new Point(439, 109);
+            listView2.Columns.AddRange(new ColumnHeader[] { columnHeader4, columnHeader5, columnHeader2, columnHeader6, columnHeader7 });
+            listView2.Location = new Point(384, 93);
+            listView2.Margin = new Padding(3, 2, 3, 2);
             listView2.Name = "listView2";
-            listView2.Size = new Size(340, 184);
+            listView2.Size = new Size(409, 139);
             listView2.TabIndex = 26;
             listView2.UseCompatibleStateImageBehavior = false;
             listView2.View = View.Details;
@@ -203,14 +212,27 @@
             // 
             columnHeader5.Text = "Valor";
             // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Parcela Atual";
+            // 
+            // columnHeader6
+            // 
+            columnHeader6.Text = "Total Parcelas";
+            // 
+            // columnHeader7
+            // 
+            columnHeader7.Text = "Valor Parcela";
+            // 
             // button4
             // 
             button4.BackColor = Color.SteelBlue;
             button4.Cursor = Cursors.Hand;
             button4.ForeColor = Color.White;
-            button4.Location = new Point(439, 369);
+            button4.Location = new Point(384, 288);
+            button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
-            button4.Size = new Size(193, 29);
+            button4.Size = new Size(169, 22);
             button4.TabIndex = 29;
             button4.Text = "EDITAR DÍVIDA";
             button4.UseVisualStyleBackColor = false;
@@ -221,9 +243,10 @@
             button5.BackColor = Color.Brown;
             button5.Cursor = Cursors.Hand;
             button5.ForeColor = Color.White;
-            button5.Location = new Point(439, 334);
+            button5.Location = new Point(384, 261);
+            button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
-            button5.Size = new Size(193, 29);
+            button5.Size = new Size(169, 22);
             button5.TabIndex = 28;
             button5.Text = "REMOVER DÍVIDA";
             button5.UseVisualStyleBackColor = false;
@@ -234,9 +257,10 @@
             button6.BackColor = Color.SeaGreen;
             button6.Cursor = Cursors.Hand;
             button6.ForeColor = Color.White;
-            button6.Location = new Point(439, 299);
+            button6.Location = new Point(384, 235);
+            button6.Margin = new Padding(3, 2, 3, 2);
             button6.Name = "button6";
-            button6.Size = new Size(193, 29);
+            button6.Size = new Size(169, 22);
             button6.TabIndex = 27;
             button6.Text = "ADICIONAR DÍVIDA";
             button6.UseVisualStyleBackColor = false;
@@ -245,36 +269,36 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(785, 138);
+            label8.Location = new Point(796, 116);
             label8.Name = "label8";
-            label8.Size = new Size(158, 20);
+            label8.Size = new Size(127, 15);
             label8.TabIndex = 30;
             label8.Text = "Fatural Atual (Líquida):";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(785, 169);
+            label9.Location = new Point(796, 139);
             label9.Name = "label9";
-            label9.Size = new Size(101, 20);
+            label9.Size = new Size(82, 15);
             label9.TabIndex = 31;
             label9.Text = "Fatura Limite: ";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(940, 138);
+            label10.Location = new Point(929, 116);
             label10.Name = "label10";
-            label10.Size = new Size(58, 20);
+            label10.Size = new Size(44, 15);
             label10.TabIndex = 32;
             label10.Text = "label10";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(876, 169);
+            label11.Location = new Point(879, 139);
             label11.Name = "label11";
-            label11.Size = new Size(58, 20);
+            label11.Size = new Size(44, 15);
             label11.TabIndex = 33;
             label11.Text = "label11";
             // 
@@ -285,17 +309,19 @@
             button7.Cursor = Cursors.Hand;
             button7.FlatAppearance.BorderSize = 0;
             button7.FlatStyle = FlatStyle.Flat;
-            button7.Location = new Point(1102, 101);
+            button7.Location = new Point(964, 76);
+            button7.Margin = new Padding(3, 2, 3, 2);
             button7.Name = "button7";
-            button7.Size = new Size(44, 40);
+            button7.Size = new Size(38, 30);
             button7.TabIndex = 36;
             button7.UseVisualStyleBackColor = false;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(970, 166);
+            textBox3.Location = new Point(800, 182);
+            textBox3.Margin = new Padding(3, 2, 3, 2);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(97, 27);
+            textBox3.Size = new Size(85, 23);
             textBox3.TabIndex = 37;
             // 
             // button8
@@ -307,9 +333,10 @@
             button8.FlatAppearance.BorderSize = 0;
             button8.FlatStyle = FlatStyle.Flat;
             button8.ForeColor = Color.Transparent;
-            button8.Location = new Point(1073, 159);
+            button8.Location = new Point(891, 177);
+            button8.Margin = new Padding(3, 2, 3, 2);
             button8.Name = "button8";
-            button8.Size = new Size(44, 40);
+            button8.Size = new Size(38, 30);
             button8.TabIndex = 38;
             button8.UseVisualStyleBackColor = true;
             button8.Click += button8_Click;
@@ -317,36 +344,36 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(828, 109);
+            label12.Location = new Point(834, 94);
             label12.Name = "label12";
-            label12.Size = new Size(58, 20);
+            label12.Size = new Size(44, 15);
             label12.TabIndex = 39;
             label12.Text = "label12";
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(785, 109);
+            label13.Location = new Point(797, 94);
             label13.Name = "label13";
-            label13.Size = new Size(44, 20);
+            label13.Size = new Size(34, 15);
             label13.TabIndex = 40;
             label13.Text = "Data:";
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(785, 198);
+            label14.Location = new Point(796, 160);
             label14.Name = "label14";
-            label14.Size = new Size(118, 20);
+            label14.Size = new Size(93, 15);
             label14.TabIndex = 41;
             label14.Text = "Valor disponível:";
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(900, 198);
+            label15.Location = new Point(891, 160);
             label15.Name = "label15";
-            label15.Size = new Size(58, 20);
+            label15.Size = new Size(44, 15);
             label15.TabIndex = 42;
             label15.Text = "label15";
             // 
@@ -355,20 +382,36 @@
             button9.BackColor = Color.Brown;
             button9.Cursor = Cursors.Hand;
             button9.ForeColor = Color.White;
-            button9.Location = new Point(924, 369);
+            button9.Location = new Point(807, 288);
+            button9.Margin = new Padding(3, 2, 3, 2);
             button9.Name = "button9";
-            button9.Size = new Size(193, 29);
+            button9.Size = new Size(169, 22);
             button9.TabIndex = 43;
             button9.Text = "FECHAR";
             button9.UseVisualStyleBackColor = false;
             button9.Click += button9_Click;
             // 
+            // button10
+            // 
+            button10.BackColor = Color.DarkOrange;
+            button10.Cursor = Cursors.Hand;
+            button10.ForeColor = Color.White;
+            button10.Location = new Point(559, 235);
+            button10.Margin = new Padding(3, 2, 3, 2);
+            button10.Name = "button10";
+            button10.Size = new Size(169, 22);
+            button10.TabIndex = 44;
+            button10.Text = "ANTECIPAR PARCELA";
+            button10.UseVisualStyleBackColor = false;
+            button10.Click += button10_Click_1;
+            // 
             // EditarItem
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
-            ClientSize = new Size(1153, 450);
+            ClientSize = new Size(1009, 338);
+            Controls.Add(button10);
             Controls.Add(button9);
             Controls.Add(label15);
             Controls.Add(label14);
@@ -397,6 +440,7 @@
             Controls.Add(listView1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.Fixed3D;
+            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "EditarItem";
             ShowIcon = false;
@@ -439,5 +483,9 @@
         private Label label14;
         private Label label15;
         private Button button9;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader6;
+        private ColumnHeader columnHeader7;
+        private Button button10;
     }
 }

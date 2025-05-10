@@ -19,6 +19,9 @@
     <Compile Update="Forms\Divida\EditarDivida\EditarDivida.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Divida\PagarParcela\PagarParcela.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Divida\RemoverDivida\RemoverDivida.cs">
       <SubType>Form</SubType>
     </Compile>

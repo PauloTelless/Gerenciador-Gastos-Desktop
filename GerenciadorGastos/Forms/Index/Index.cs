@@ -185,8 +185,8 @@ namespace GerenciadorGastos.Forms
 
             decimal valorDisponivelFaturaLiquida = faturaLimite - (gastoFixo + divida);
 
-            int diasDesdeDomingo = (int)data.DayOfWeek; 
-            DateTime domingo = diasDesdeDomingo == 0 ? data : data.AddDays(-diasDesdeDomingo); 
+            int diasDesdeDomingo = (int)data.DayOfWeek;
+            DateTime domingo = diasDesdeDomingo == 0 ? data : data.AddDays(-diasDesdeDomingo);
             DateTime sabado = domingo.AddDays(6);
 
             decimal gastoSemanaAtual = itemBLL.ObterSomaValorSemanaAtual(domingo, sabado);
@@ -201,26 +201,23 @@ namespace GerenciadorGastos.Forms
 
         private int CalcularNumeroDeSemanas(DateTime dataAtual)
         {
-            DateTime inicio = new DateTime(dataAtual.Year, dataAtual.Month, 1).AddMonths(-1).AddDays(6); 
+            DateTime inicio = new DateTime(dataAtual.Year, dataAtual.Month, 8);
+            DateTime fim = inicio.AddMonths(1).AddDays(-1);
 
-            DateTime fim = new DateTime(dataAtual.Year, dataAtual.Month, 8);
+            DateTime primeiroDomingo = inicio.AddDays(-(int)inicio.DayOfWeek);
 
-            DateTime primeiroDomingo = inicio;
-            while (primeiroDomingo.DayOfWeek != DayOfWeek.Sunday)
-            {
-                primeiroDomingo = primeiroDomingo.AddDays(1);
-            }
+            DateTime ultimoSabado = fim.AddDays(6 - (int)fim.DayOfWeek);
 
             int semanas = 0;
             DateTime atual = primeiroDomingo;
 
-            while (atual.AddDays(7) <= fim)
+            while (atual <= ultimoSabado)
             {
                 semanas++;
                 atual = atual.AddDays(7);
             }
 
-            return Math.Max(semanas, 1);
+            return semanas;
         }
 
 
